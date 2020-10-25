@@ -1,3 +1,4 @@
 @echo off
-@echo gcc -Wall -Werror -o%HOME%\app.exe ./main.c
+@REM echo gcc -Wall -Werror -o%HOME%\app.exe ./main.c
+@SET
 
