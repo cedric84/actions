@@ -8,6 +8,8 @@ jobs:
         uses: actions/checkout@v2
       - name: build
         run: ./github_gnu_build.sh
+      - name: unittest
+        run: ./app unittest
       - name: Upload output file
         uses: actions/upload-artifact@v1
         with:
@@ -20,3 +22,6 @@ jobs:
         uses: actions/checkout@v2
       - name: build
         run: ./github_mac_build.command
+      - name: unittest
+        run: ./app unittest
+
