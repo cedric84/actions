@@ -4,10 +4,19 @@ jobs:
   ubuntu-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: ./github_gnu_build.sh
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_gnu_build.sh
+      - name: Upload output file
+        uses: actions/upload-artifact@v1
+        with:
+          name: application
+          path: app
   mac-build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: ./github_mac_build.command
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_mac_build.command

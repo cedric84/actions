@@ -1,5 +1,5 @@
 #! /bin/bash
 
 CC=cc
-${CC} --version
+${CC} -Wall -Werror -oapp ./main.c
 
