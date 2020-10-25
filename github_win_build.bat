@@ -1,3 +1,3 @@
 @echo off
-gcc -Wall -Werror -oapp.exe ./main.c
+gcc -Wall -Werror -o./app.exe ./main.c
 
