@@ -1,10 +1,13 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  ubuntu-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pwd
-      - run: ls -la
       - run: ./github_gnu_build.sh
+  mac-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./github_mac_build.command
