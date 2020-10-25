@@ -1,3 +1,3 @@
 @echo off
-gcc -Wall -Werror -o./app.exe ./main.c
+@echo gcc -Wall -Werror -o%HOME%\app.exe ./main.c
 
