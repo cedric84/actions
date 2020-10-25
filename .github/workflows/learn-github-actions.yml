@@ -36,10 +36,10 @@ jobs:
   windows-build:
     runs-on: windows-latest
     steps:
-#      - name: checkout
-#        uses: actions/checkout@v2
-#      - name: build
-#        run: ./github_win_build.bat
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_win_build.bat
       - name: unittest
         run: start /wait $Env:GITHUB_WORKSPACE\app.exe unittest
 #      - name: upload
