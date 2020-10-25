@@ -40,8 +40,8 @@ jobs:
         uses: actions/checkout@v2
       - name: build
         run: ./github_win_build.bat
-#      - name: unittest
-#        run: HOME/app.exe unittest
+      - name: unittest
+        run: GITHUB_WORKSPACE\app.exe unittest
 #      - name: upload
 #        uses: actions/upload-artifact@v1
 #        with:
