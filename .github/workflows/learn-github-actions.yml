@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - release
+      - master
 jobs:
   ubuntu-build:
     runs-on: ubuntu-latest
@@ -16,7 +17,7 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@v1
         with:
-          name: application
+          name: ubuntu-app
           path: app
   mac-build:
     runs-on: macos-latest
@@ -27,4 +28,9 @@ jobs:
         run: ./github_mac_build.command
       - name: unittest
         run: ./app unittest
+  windows-build:
+    runs-on: windows-latest
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_win_build.bat
 
