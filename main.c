@@ -10,5 +10,3 @@ main(int argc, char* argv[])
 	printf("%s terminated\n", __FUNCTION__);
 	return 0;
 }
-
-#error "coucou"
