@@ -41,7 +41,7 @@ jobs:
       - name: build
         run: ./github_win_build.bat
       - name: unittest
-        run: $Env:GITHUB_WORKSPACE\app.exe
+        run: ${Env:GITHUB_WORKSPACE}\app.exe
 #        run: Start-Process -FilePath "$Env:GITHUB_WORKSPACE\app.exe unittest"
 #        run: Start-Process -FilePath ".\app.exe unittest"
 #      - name: upload
