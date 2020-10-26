@@ -41,9 +41,9 @@ jobs:
       - name: build
         run: ./github_win_build.bat
       - name: unittest
-        run: Start-Process -FilePath "${Env:GITHUB_WORKSPACE}\app.exe" -ArgumentList "unittest" -Wait
+        run: Start-Process -FilePath "app.exe" -ArgumentList "unittest" -Wait -NoNewWindow
       - name: upload
         uses: actions/upload-artifact@v1
         with:
           name: windows-app
-          path: ${Env:GITHUB_WORKSPACE}\app.exe
+          path: app.exe
