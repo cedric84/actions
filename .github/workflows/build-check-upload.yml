@@ -1,0 +1,49 @@
+name: build & check the application
+on:
+  push:
+    branches:
+      - release
+      - master
+jobs:
+  ubuntu-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_gnu_build.sh
+      - name: unittest
+        run: ./app unittest
+      - name: upload
+        uses: actions/upload-artifact@v1
+        with:
+          name: ubuntu-app
+          path: app
+  mac-build:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_mac_build.command
+      - name: unittest
+        run: ./app unittest
+      - name: upload
+        uses: actions/upload-artifact@v1
+        with:
+          name: macos-app
+          path: app
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: ./github_win_build.bat
+      - name: unittest
+        run: Start-Process -FilePath "app.exe" -ArgumentList "unittest" -Wait -NoNewWindow
+      - name: upload
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows-app
+          path: app.exe
